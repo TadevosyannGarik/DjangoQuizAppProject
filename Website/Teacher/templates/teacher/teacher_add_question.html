@@ -1,0 +1,54 @@
+{% extends 'teacher/teacherbase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  a:link {
+        text-decoration: none;
+      }
+    
+  </style>
+</head>
+<h2 style="text-align:center; color:white;">Добавить вопрос</h2>
+<form method="POST" autocomplete="off" style="margin:100px;margin-top: 0px; color:white;">
+    {%csrf_token%}
+    <div class="form-group">
+        <label for="Question">Экзамен</label>
+      {% render_field questionForm.courseID|attr:'required:true' class="form-control"  %}
+        <br><br>
+
+      <label for="Question">Вопрос</label>
+      {% render_field questionForm.Question|attr:'required:true' class="form-control" placeholder="Who committed the bite of 83 ?" %}
+        <br><br>
+      <label for="QuestionNumber">Балл</label>
+      {% render_field questionForm.Marks|attr:'required:true' class="form-control" placeholder="10" %}
+        <br><br>
+      <label for="PossiblyAnswer1">Вариант ответа 1</label>
+      {% render_field questionForm.PossiblyAnswer1|attr:'required:true' class="form-control" placeholder="Chica" %}
+        <br><br>
+      <label for="PossiblyAnswer2">Вариант ответа 2</label>
+      {% render_field questionForm.PossiblyAnswer2|attr:'required:true' class="form-control" placeholder="Fredbear" %}
+        <br><br>
+      <label for="PossiblyAnswer3">Вариант ответа 3</label>
+      {% render_field questionForm.PossiblyAnswer3|attr:'required:true' class="form-control" placeholder="Bonnie" %}
+        <br><br>
+      <label for="PossiblyAnswer4">Вариант ответа 4</label>
+      {% render_field questionForm.PossiblyAnswer4|attr:'required:true' class="form-control" placeholder="Freddy Fazbear" %}
+        <br><br>
+      <label for="Answer">Ответ</label>
+      {% render_field questionForm.Answer|attr:'required:true' class="form-control" %}
+    </div>
+    
+
+    <button type="submit" class="btn btn-primary">ADD</button>
+  </form>
+<br><br><br>
+{% endblock content %}

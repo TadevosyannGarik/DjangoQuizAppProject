@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+
+
+  <style media="screen">
+
+
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .jumbotron h1 {
+      text-align: center;
+    }
+
+    .alert {
+      margin: 0px;
+    }
+          body {background: linear-gradient(to right, #15171a , #15171a )}
+
+  </style>
+  <body>
+    {% include "quiz/navbar.html" %}
+<!--    -->
+<!--      <div class="jumbotron" style="margin-top: 0px;-->
+<!--        margin-bottom: 0px; " >-->
+<br><br><br><br>
+    <h1 class="display-4" style="text-align: center;color: white;"><strong>Здравствуйте {{request.user.first_name}}</strong></h1>
+    <br>
+    <p class="lead" style="text-align: center;color: white;"><strong>Пожалуйста, подождите пока вашу учетную запись одобрят.</strong> <br><br><strong>Наша команда проверяет ваш профиль.</strong> <br><br><strong>Скоро ваша учетная запись будет одобрена.</strong></p>
+<!--        <hr class="my-4">-->
+    <br><br><br><br><br><br><br><br>
+
+    <p class="display-8" style="text-align: center;color: white;"> Проверить позже</p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="/logout" role="button">Logout For Now</a>
+        </p>
+      </div>
+
+{% include "quiz/footer.html" %}
+  </body>
+</html>

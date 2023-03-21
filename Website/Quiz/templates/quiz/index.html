@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+<head>
+    <title>Tadevosyan Industries</title>
+</head>
+  <style media="screen">
+    body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: 300% 300%;
+  background-image: linear-gradient(
+        -45deg,
+        rgba(59,173,227,1) 0%,
+        rgba(87,111,230,1) 25%,
+        rgba(152,68,183,1) 51%,
+        rgba(255,53,127,1) 100%
+  );
+  animation: AnimateBG 20s ease infinite;
+}
+
+@keyframes AnimateBG {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+    }
+
+  }
+
+  .signup-btn:hover:before {
+    transform: scale(4);
+  }
+
+  .signup-btn i {
+    margin-right: 10px;
+    transition: transform 0.9s;
+  }
+
+  .signup-btn:hover i {
+    transform: rotate(360deg);
+  }
+  }
+
+
+</style>
+<body>
+  {% include "quiz/navbar.html" %}
+
+<section>
+  <div class="container text-center">
+    <br>
+    <br>
+    <br></br>
+<div style="background: transparent; text-align: center; padding: 2rem; border-radius: 1rem;">
+  <h1 style="font-size: 4rem; color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); letter-spacing: 0.1em; margin-bottom: 2rem;">Let's Quiz</h1>
+  <h2 style="font-size: 2rem; color: #F0F8FF; letter-spacing: 0.1em;"><strong>Проверьте свои знания</strong></h2>
+  <h3 style="font-size: 1.5rem; color: #F0F8FF; margin-top: 1.5rem; letter-spacing: 0.1em;"><strong>Здесь вы можете пройти тесты на разные темы</strong></h3>
+  <h4 style="color:#F0F8FF"><strong>Зарегистрируйтесь, если вы еще этого не сделали, и получите доступ к миллионам тестов по интересующей вас теме.</strong></h4>
+</div>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h5 style="color:#F0F8FF"><strong>Для старта нажмите ниже:</strong></h5>
+    <br>
+    <a href="/student/studentsignup" class="btn btn-dark btn-info signup-btn"> <i class='fa fa-user-plus' style='color:#9a27b9' ></i> Sign Up</a>
+
+    <br><br><br>
+  </div>
+</section>
+  {% include "quiz/footer.html" %}
+
+
+</body>
+
+</html>

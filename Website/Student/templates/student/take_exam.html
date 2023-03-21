@@ -1,0 +1,67 @@
+{% extends 'student/studentbase.html' %}
+{% block content %}
+{%load static%}
+
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<style>
+  .card-title {
+    color: black;
+  }
+      .btn-info {
+    background-color: #15171a;
+  }
+</style>
+
+
+</head>
+<br><br>
+<div class="container my-4">
+    <div class="jumbotron">
+
+	      <h3 class="text-info text-center">Пожалуйста, ознакомьтесь с правилами и деталями перед началом теста.</h3>
+<br>
+        <div class="row">
+
+            <div class="card border-info mx-4 my-4">
+                <div class="card-body text-info">
+
+
+            <strong class="card-title">Детали экзамена:</strong>
+                    <p class="card-text">
+                        </p><ul style="list-style:decimal;">
+                            <li>Название экзамена: {{course.CourseName}}</li>
+                            <li>Количество вопросов: {{total_questions}}</li>
+                            <li>Всего баллов: {{total_marks}}</li>
+                        </ul>
+                    <p></p>
+
+
+
+                    <strong class="card-title">Правила :</strong>
+                    <p class="card-text">
+                        </p><ul style="list-style:decimal;">
+                            <li>Каждый вопрос имеет несколько вариантов ответа.</li>
+                            <li><span class="text-danger">Только один выбор правильный.</span></li>
+                            <li>Каждый вопрос имеет разные отметки.
+                            </li>
+
+                            <li>Преподаватель сам решает, сколько будет длиться экзамен. Постарайтесь сдать экзамен во время.</li>
+
+                            <li>Вопросы отображаются случайным образом для каждого пользователя.</li>
+                            <li>Вам сразу сообщат ваши оценки, когда вы отправите тест.</li>
+                        </ul>
+                    <p></p>
+                    <a href="{% url 'start-exam' course.id  %}" class="btn btn-info">Let's Start</a>
+                </div>  
+                <strong class="card-footer">Удачи ;)</strong>
+            </div>  
+        </div>  
+
+    </div>
+</div>
+
+<br><br><br><br><br><br>
+{% endblock content %}

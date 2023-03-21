@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/html">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <style media="screen">
+    body {
+
+      background: linear-gradient(to right, #191919 , #191919)
+    }
+
+
+.button1 {
+    color: #fff;
+    text-decoration: none;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition-duration: 0.4s;
+  animation-name: example;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes example {
+
+  0% {background-color: #4CAF50;}
+  25% {background-color: #2196F3;}
+  50% {background-color: #f44336;}
+  75% {background-color: #9c27b0;}
+  100% {background-color: #4CAF50;}
+}
+
+
+  </style>
+
+</head>
+
+<body>
+
+  {% include "quiz/navbar.html" %}
+  <br><br>
+    <br><br>
+    <br><br>
+<br><br>
+  <div class="" style="" >
+    <p style="color: #fefaff; text-decoration: none; "><font size="8"> Здравствуйте Студент</font><br /></p>
+    <p style="color: #fefaff; text-decoration: none; " href="/"><font size="5">Добро пожаловать на онлайн тесты</font> <br /></p>
+<!--    <hr class="my-4">-->
+    <p style="color: #fefaff; text-decoration: none; " href="/"><font size="4">Вы можете получить доступ к различным функциям после авторизации.</font></p>
+    <p class="lead">
+      <button class="button button1" type="button" onclick="location.href='studentsignup'">Создать аккаунт</button>
+      <button class="button button1" type="button" onclick="location.href='studentlogin'">Войти</button>
+    </p>
+
+    <br><br><br><br><br><br>
+  </div>
+</body>
+{% include "quiz/footer.html" %}
+</html>

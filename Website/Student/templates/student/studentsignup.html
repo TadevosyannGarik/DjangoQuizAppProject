@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <style media="screen">
+    body {background: linear-gradient(to right, #2d2a2e , #2d2a2e )}
+
+    .form-group {
+    position: relative;
+    animation: form-group-animation 1.3s ease;
+}
+
+    @keyframes form-group-animation {
+    0% {opacity: 0; transform: translateY(20px);}
+    100% {opacity: 1; transform: translateY(0);}
+}
+
+    label {
+    font-size: 18px;
+    color: #fffff;
+    margin-bottom: 10px;
+    display: block;
+    animation: label-animation 2.5s ease;
+}
+
+    @keyframes label-animation {
+    0% {opacity: 0; transform: translateY(-20px);}
+    50% {opacity: 1; transform: translateY(0);}
+}
+
+    input[type="text"] {
+    border-radius: 10px;
+    border: 3px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+    animation: input-animation 2.5s ease;
+}
+
+    input[type="text"]:focus {
+    outline: none;
+    border-color: #6a5acd;
+}
+
+    @keyframes input-animation {
+    0% {opacity: 0; transform: translateX(-20px);}
+    100% {opacity: 1; transform: translateX(0);}
+}
+
+
+
+
+    form{border: 0;
+    background: linear-gradient(to right, #191919 , #191919);
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    border: 2px solid #191919;
+    padding: 0px 70px;
+    width: 1500px;
+    outline: none;
+    color: white;
+
+    border-radius: 50px;
+    transition: 0.25s}
+
+.button {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 30px auto;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 10px 10px;
+  width: 280px;
+  outline: none;
+  color: white;
+  border-radius: 20px;
+  transition: 0.25s;
+}
+
+.button:hover {
+  transform;
+  background-color: #2ecc71;
+  cursor: pointer;
+}
+.button input[type="text"],
+.button input[type="password"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 23px 10px;
+    width: 280px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s
+}
+
+.button h1 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500
+}
+
+.button input[type="text"]:focus,
+.button input[type="password"]:focus {
+    width: 300px;
+    border-color: #2ecc71
+}
+
+.box input[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 60px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer
+}
+
+.button input[type="submit"]:hover {
+    background: #2ecc71
+}
+
+
+
+    </style>
+  </head>
+  <body>
+
+  {% include "quiz/navbar.html" %}
+
+
+
+<br><br><br>
+
+    <form method="POST" autocomplete="off" enctype="multipart/form-data">
+    {% csrf_token %}
+        <p style="background-color:#ff0000; color:#ffffff"> <h4>Регистрация студентов</h4></p>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="username">Логин </label>
+        {% render_field userForm.username|attr:'required:true'  class="form-control" placeholder="Username" %}
+        <br><br><br>
+        </div>
+
+      <div class="form-group col-md-6">
+          <label for="inputPassword4">Пароль</label>
+          {% render_field userForm.password|attr:'required:true'  class="form-control" placeholder="Password" %}
+            <br><br>
+      </div>
+    </div>
+
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+
+          <label for="first_name">Имя</label>
+          {% render_field userForm.first_name|attr:'required:true'  class="form-control" placeholder="First Name" %}
+            <br><br><br>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="last_name">Фамилия</label>
+          {% render_field userForm.last_name|attr:'required:true'  class="form-control" placeholder="Last Name" %}
+        </div>
+    </div>
+
+   <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="Mobile">Номер телефона</label>
+          {% render_field studentForm.Mobile|attr:'required:true'  class="form-control" placeholder="Mobile" %}
+        </div>
+        <div class="form-group col-md-6">
+          <label for="Address">Email</label>
+          {% render_field studentForm.Address|attr:'required:true'  class="form-control" placeholder="Address" %}
+        </div>
+      </div>
+
+
+    <br><br>
+    <form class="box" method="post">
+        <button type="submit" class="button button1">Sign Up</button>
+    </form>
+
+
+
+
+<br><br>
+{% include "quiz/footer.html" %}
+  </body>
+</html>

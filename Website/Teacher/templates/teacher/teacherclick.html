@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <style media="screen">
+      body {
+
+      background: linear-gradient(to right, #191919 , #191919)
+    }
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .jumbotron h1 {
+      text-align: center;
+    }
+.button1 {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition-duration: 0.4s;
+  animation-name: example;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes example {
+  0% {background-color: #4CAF50;}
+  25% {background-color: #2196F3;}
+  50% {background-color: #f44336;}
+  75% {background-color: #9c27b0;}
+  100% {background-color: #4CAF50;}
+}
+  </style>
+
+</head>x`
+
+<body>
+
+  {% include "quiz/navbar.html" %}
+  <br><br>
+  <div class="" style="" >
+    <br><br><br><br>
+    <p style="color: #fefaff; text-decoration: none; "><font size="8">Здравствуйте преподаватель</font><br /></p>
+    <p style="color: #fefaff; text-decoration: none; " href="/"><font size="5">Добро пожаловать на онлайн тесты</font> <br /></p>
+<!--    <hr class="my-4">-->
+    <p style="color: #fefaff; text-decoration: none; " href="/"><font size="4">Вы можете получить доступ к различным функциям после входа в систему.</font> <br /></p>
+    <p class="lead">
+      <button class="button button1" type="button" onclick="location.href='teachersignup'">Создать аккаунт</button>
+    <button class="button button1" type="button" onclick="location.href='teacherlogin'">Войти</button>
+    </p>
+    <br><br><br><br>
+  </div>
+  {% include "quiz/footer.html" %}
+</body>
+
+</html>
